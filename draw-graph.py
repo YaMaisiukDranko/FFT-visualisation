@@ -7,6 +7,6 @@ fs = 60 # point / sec
 maxTime = 3 # Seconds
 t = np.linspace(0, maxTime, fs * maxTime)
 
-wave = np.sin(wy * t)
+wave = np.cos(wy * t)
 plt.plot(t, wave)
 plt.show()
