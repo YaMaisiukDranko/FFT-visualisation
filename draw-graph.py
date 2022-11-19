@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 
-figure(figsize=(16, 6), dpi=80)
+figure(figsize=(24, 6), dpi=80)
 
 
 waveType = input("Enter type of wave: cos or sin:  ")
