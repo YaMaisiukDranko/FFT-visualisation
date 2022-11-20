@@ -1,25 +1,19 @@
+# Importing Required Libraries
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.pyplot import figure
+# sampling rate
+sr = 100.0
+# sampling interval
+ts = 1.0/sr
+t = np.arange(0,1,ts)
 
-figure(figsize=(24, 6), dpi=80)
-
-
-waveType = input("Enter type of wave: cos or sin:  ")
-freq = int(input("Enter wave frequency:  "))
-maxTime = int(input("Enter graph time in seconds:  "))
-
-
-fs = 60  # point / sec
-pc = 2 * np.pi * freq
-t = np.linspace(0, maxTime, fs * maxTime)
-
-if waveType == "cos":
-    wave = np.cos(pc * t)
-elif waveType == "sin":
-    wave = np.sin(pc * t)
-
-plt.plot(t, wave)
+freq = 2
+y = freq*np.sin(2*np.pi*freq*t)
+plt.xlim(freq*-1, 1)
+plt.ylim(-1, 1)
+plt.axis('square')
+#plt.axis('square')
+# plt.figure(figsize = (8, 8))
+plt.plot(t, y, 'b')
+plt.ylabel('Amplitude')
 plt.show()
-
-
