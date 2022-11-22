@@ -2,18 +2,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 # sampling rate
+freq = 3
 sr = 100.0
 # sampling interval
-ts = 1.0/sr
-t = np.arange(0,1,ts)
+ts = 1/sr
+t = np.arange(0, 4.5, ts)
 
-freq = 2
-y = freq*np.sin(2*np.pi*freq*t)
-plt.xlim(freq*-1, 1)
-plt.ylim(-1, 1)
-plt.axis('square')
+
+y = np.cos(2*np.pi*freq*t)
+plt.xlim(0, 4.5)
+plt.ylim(0, 1)
 #plt.axis('square')
-# plt.figure(figsize = (8, 8))
+#plt.axis('square')
+plt.figure(figsize = (8, 2))
 plt.plot(t, y, 'b')
+plt.xlabel('Time')
 plt.ylabel('Amplitude')
 plt.show()

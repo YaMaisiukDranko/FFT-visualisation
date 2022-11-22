@@ -1,33 +1,20 @@
+# Program to plot a Circle
+# using Parametric equation of a Circle
+
 import numpy as np
-import math
 import matplotlib.pyplot as plt
 
+theta = np.linspace( 0 , 2 * np.pi , 150 )
 
-class Point:
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
+radius = 0.4
 
+a = radius * np.cos( theta )
+b = radius * np.sin( theta )
 
-def sineAroundCircle(cx, cy, radius, amplitude, angle, frequency):
-    p = Point()
-    p.x = cx + (radius + amplitude * np.sin(frequency * angle)) * np.cos(angle)
-    p.y = cy + (radius + amplitude * np.sin(frequency * angle)) * np.sin(angle)
-    return p
+figure, axes = plt.subplots( 1 )
 
+axes.plot( a, b )
+axes.set_aspect( 1 )
 
-cx = 150
-cy = 150
-radius = 50
-amp = 30
-frequency = 10
-pt = Point()
-
-fig, ax = plt.subplots()
-
-for i in range(1, 360):
-    angle = i * math.pi / 180
-    pt = sineAroundCircle(cx, cy, radius, amp, angle, frequency)
-    line1, = ax.plot(pt.x, pt.y, 'bo')
-
+plt.title( 'Parametric Equation Circle' )
 plt.show()
